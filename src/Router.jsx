@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Home.jsx";
 import Shop from "./Shop.jsx";
@@ -10,11 +12,20 @@ function Router() {
     },
     {
       path: "shop",
-      element: <Shop />,
-      children: [{ path: "manga", element: <Manga /> }],
+      element: (
+        <>
+          <Shop />
+          <Manga />
+        </>
+      ),
     },
   ]);
   return <RouterProvider router={router} />;
 }
 
 export default Router;
+
+//{ path:"shop/:name", element:<Shop/>} render content dynamically from the component itself
+//OR
+
+//{path: "shop",element: ( <> <Shop /> <Manga /> </>),},
