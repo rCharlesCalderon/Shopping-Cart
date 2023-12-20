@@ -3,30 +3,36 @@
     margin: 0%;
     padding: 0%;
 }
-
+@font-face {
+    font-family: anime;
+    src: url("./fonts/anime-ace.regular.ttf");
+}
 .shop-container {
-    border: 1px green solid;
     width: 100%;
     min-height: 100vh;
 }
 
 .ad-container {
     display: flex;
-    border: 1px red solid;
+    flex-direction: row;
     width: 100%;
     height: 230px;
     justify-content: center;
+    align-items: center;
     gap: 14px;
-    padding-top: 13px;
+    
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 .ad {
-    text-align: center;
-    border: 1px purple solid;
     border-radius: 15px;
-    width: 32%;
-    height: 80%;
+    width: 8%;
+    height: 90%;
+    
 }
-
+.ad-container img {
+    height: 90%;
+    width: 10%;
+}
 .main-container {
     display: flex;
    border: 1px black solid;
@@ -43,8 +49,13 @@
 
 
 h1{
-    background: linear-gradient(to right, #434343 0%, black 100%);
-     padding: 15px;
+   font-family: anime;
+    color: white;
+    font-size: 23px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+   background: linear-gradient(100deg,#000,transparent);
+     padding: 25px;
      width: 100%;
 }
 
@@ -61,6 +72,8 @@ h1{
     position: relative;
    height: 270px;
    width: 190px;
+   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+   
 }
 
 .manga-book img {
@@ -95,6 +108,51 @@ h1{
 
 
 .hottest-container{
+    display: flex;
+    flex-direction: column;
     width: 25%;
     border: 1px red solid;
+    background: linear-gradient(107.2deg, rgb(150, 15, 15) 10.6%, rgb(247, 0, 0) 91.1%);
+    align-items: center;
+    gap: 35px;
+}
+.hottest-container h1{
+    text-align: center;
+ background: red;
+ color: white;
+}
+
+.hot-manga{
+    border: 1px green solid;
+}
+.footer {
+    display: flex;
+    width: 100%;
+    height: 5vh;
+    justify-content: space-between;
+    padding: 10px;
+}
+.footer button{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    width: auto;
+    background: none;
+    color: white;
+    font-size: 20px;
+    border: none;
+    gap: 10px;
+}
+.footer img {
+    height: 50px;
+    width: 50px;
+}
+
+.cart {
+    position: fixed;
+    width: 25%;
+    height: 100vh;
+    border: 1px green solid;
+    
+    right: 0;
 }

@@ -5,15 +5,16 @@ import Home from "./Home.jsx";
 import Shop from "./Shop.jsx";
 import Navbar from "./Navbar.jsx";
 import AboutManga from "./AboutManga.jsx";
-import Manga from "./Manga.jsx";
+import { useState } from "react";
 
 function Router() {
+  const [cart, setCart] = useState([]);
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
         <>
-          <Navbar />,
+          <Navbar cart={cart} />,
           <Home />,
         </>
       ),
@@ -22,8 +23,8 @@ function Router() {
       path: "/shop",
       element: (
         <>
-          <Navbar />,
-          <Shop />,
+          <Navbar cart={cart} />
+          <Shop />
         </>
       ),
     },
@@ -32,7 +33,7 @@ function Router() {
       element: (
         <>
           <Navbar />
-          <AboutManga />
+          <AboutManga setCart={setCart} cart={cart} />
         </>
       ),
     },

@@ -2,14 +2,50 @@ import { useFetcher, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import Manga from "./Manga.jsx";
+import fire from "./images/fire.png";
+import leftArrow from "./images/left-arrow.png";
+import rightArrow from "./images/right-arrow.png";
 import { useEffect, useState } from "react";
+import madara from "./images/madara.jpg";
+import toji from "./images/toji.webp";
+import chainsawMan from "./images/chainsawjpg.jpg";
+import death from "./images/death.jpg";
 
 import "./shop.css";
+import { func } from "prop-types";
 
 function Shop() {
   const [mangas, setMangas] = useState(null);
+  const [recManga, SetrecManga] = useState(null);
+  let test = 1;
+
   useEffect(() => {
-    fetch(`https://api.jikan.moe/v4/top/manga`, {
+    handlePopularManga(1);
+    handleRecommendManga();
+  }, []);
+
+  function handleRecommendManga() {
+    fetch("https://api.jikan.moe/v4/recommendations/manga", {
+      mode: "cors",
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((results) => {
+        let resultLimit = results.data.slice(0, 4);
+        let modifiedObj = [...resultLimit].map((obj) => {
+          return {
+            ...obj,
+            id: crypto.randomUUID(),
+            price: 10.99,
+          };
+        });
+        SetrecManga(modifiedObj);
+        console.log(resultLimit, "awdw");
+      });
+  }
+  function handlePopularManga(page) {
+    fetch(`https://api.jikan.moe/v4/top/manga?page=${page}`, {
       mode: "cors",
     })
       .then((response) => {
@@ -28,24 +64,27 @@ function Shop() {
         console.log(mangas);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }
+
   return (
     <>
       <div className="shop-container">
         <div className="ad-container">
-          <div className="ad">AD IMG GOES HERE</div>
-          <div className="ad">AD IMG GOES HERE</div>
-          <div className="ad">AD IMG GOES HERE</div>
+          <img src={toji}></img>
+
+          <img src={madara}></img>
+          <img src={death}></img>
+          <img src={chainsawMan}></img>
         </div>
         <div className="main-container">
           <div className="recommend-container">
-            <h1>Hottest</h1>
+            <h1>Most Popular</h1>
             <div className="manga-container">
               {mangas &&
                 mangas.map((obj) => {
                   return (
                     <Link to={`${obj.mal_id}`} key={obj.id}>
-                      <div className="manga-book" key={obj.id}>
+                      <div className="manga-book">
                         <img src={obj.images.jpg.image_url}></img>
                         <div className="manga-info">
                           <span> {obj.title}</span>
@@ -57,8 +96,35 @@ function Shop() {
                 })}
               {console.log(mangas)}
             </div>
+            <div className="footer">
+              <button>
+                <img src={leftArrow}></img>Previous
+              </button>
+
+              <button>
+                Next<img src={rightArrow}></img>
+              </button>
+            </div>
           </div>
-          <div className="hottest-container"></div>
+          <div className="hottest-container">
+            <h1>
+              <img src={fire}></img>Recommended
+            </h1>
+            {recManga &&
+              recManga.map((obj) => {
+                return (
+                  <Link to={`${obj.entry[0].mal_id}`} key={obj.id}>
+                    <div className="manga-book">
+                      <img src={obj.entry[0].images.jpg.image_url}></img>
+                      <div className="manga-info">
+                        <span> {obj.entry[0].title}</span>
+                        <span>$ {obj.price}</span>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+          </div>
         </div>
       </div>
     </>

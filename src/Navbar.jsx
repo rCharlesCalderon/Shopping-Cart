@@ -1,11 +1,34 @@
 import { Link } from "react-router-dom";
 import "./main.css";
-function Navbar() {
+import "./navbar.css";
+import blonde from "./images/blonde-avatar.png";
+import { useState } from "react";
+
+function Navbar({ cart }) {
+  const [checkout, setCheckout] = useState(false);
+  function handleShop() {
+    setCheckout(!checkout);
+  }
   return (
     <div className="header">
-      <Link to="/">Home</Link>
-      <Link to="/shop">Shop</Link>
-      <Link to="">CART IMG GOES HERE</Link>
+      <img src={blonde} className="blonde"></img>
+      <Link to="/">
+        <span>Home</span>
+      </Link>
+      <Link to="/shop">
+        <span>Shop</span>
+      </Link>
+      <Link to="">
+        {" "}
+        <span onClick={handleShop}>Shopping Cart</span>
+      </Link>
+      {checkout && (
+        <div className="cart">
+          {cart.map((obj) => {
+            return <img src={obj.images.jpg.image_url}></img>;
+          })}
+        </div>
+      )}
     </div>
   );
 }

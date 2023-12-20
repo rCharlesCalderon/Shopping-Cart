@@ -2,9 +2,13 @@ import { useEffect, useState } from "react";
 import "./aboutManga.css";
 import { Link, Outlet, useParams } from "react-router-dom";
 
-const AboutManga = () => {
-  const { id } = useParams();
 
+const AboutManga = ({ setCart, cart }) => {
+  const { id } = useParams();
+  function handleManga() {
+    setCart([...cart, manga]);
+    console.log(cart);
+  }
   const [manga, setManga] = useState(null);
   useEffect(() => {
     fetch(`https://api.jikan.moe/v4/manga/${id}/full`)
@@ -12,7 +16,11 @@ const AboutManga = () => {
         return response.json();
       })
       .then((result) => {
-        setManga(result);
+        let modifiedObj = {
+          ...result.data,
+          price: 10.99,
+        };
+        setManga(modifiedObj);
         console.log(result);
       });
   }, []);
@@ -20,7 +28,8 @@ const AboutManga = () => {
   return (
     <>
       <div className="about-container">
-        {manga && <img src={manga.data.images.jpg.image_url}></img>}
+        {manga && <img src={manga.images.jpg.image_url}></img>}
+        <button onClick={() => handleManga()}>adad</button>
       </div>
     </>
   );
