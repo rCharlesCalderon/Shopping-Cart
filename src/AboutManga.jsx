@@ -7,7 +7,6 @@ const AboutManga = ({ setCart, cart }) => {
   const { id } = useParams();
   function handleManga() {
     setCart([...cart, manga]);
-    console.log(cart);
   }
   const [manga, setManga] = useState(null);
   useEffect(() => {
@@ -28,8 +27,32 @@ const AboutManga = ({ setCart, cart }) => {
   return (
     <>
       <div className="about-container">
-        {manga && <img src={manga.images.jpg.image_url}></img>}
-        <button onClick={() => handleManga()}>adad</button>
+        {console.log(manga)}
+        <div className="manga-genre-container">
+          {manga && (
+            <img src={manga.images.jpg.image_url} className="manga-book"></img>
+          )}
+          <h3>Genres</h3>
+          <div className="manga-genre-info">
+            {manga &&
+              manga.genres.map((obj, index) => {
+                return <span key={index}>{obj.name},</span>;
+              })}
+          </div>
+        </div>
+        <div className="manga-detail-container">
+          <span>{manga && manga.title}</span>
+          <p>{manga && manga.background}</p>
+          <p className="price">${manga && manga.price}</p>
+          <div className="quantity">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </div>
+          <div className="cart-button-container">
+            <button>Add to Cart</button>
+          </div>
+        </div>
       </div>
     </>
   );

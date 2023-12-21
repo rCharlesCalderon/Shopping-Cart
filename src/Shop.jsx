@@ -1,23 +1,19 @@
 import { useFetcher, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import Manga from "./Manga.jsx";
 import fire from "./images/fire.png";
 import leftArrow from "./images/left-arrow.png";
 import rightArrow from "./images/right-arrow.png";
 import { useEffect, useState } from "react";
-import madara from "./images/madara.jpg";
-import toji from "./images/toji.webp";
-import chainsawMan from "./images/chainsawjpg.jpg";
-import death from "./images/death.jpg";
+
+import testt from "./images/test.jpg";
+import chainsawMan from "./images/chainsaw.jpg";
 
 import "./shop.css";
-import { func } from "prop-types";
 
 function Shop() {
   const [mangas, setMangas] = useState(null);
   const [recManga, SetrecManga] = useState(null);
-  let test = 1;
 
   useEffect(() => {
     handlePopularManga(1);
@@ -41,7 +37,6 @@ function Shop() {
           };
         });
         SetrecManga(modifiedObj);
-        console.log(resultLimit, "awdw");
       });
   }
   function handlePopularManga(page) {
@@ -61,7 +56,6 @@ function Shop() {
         });
 
         setMangas(modifiedObj);
-        console.log(mangas);
       })
       .catch((error) => console.error(error));
   }
@@ -69,13 +63,7 @@ function Shop() {
   return (
     <>
       <div className="shop-container">
-        <div className="ad-container">
-          <img src={toji}></img>
-
-          <img src={madara}></img>
-          <img src={death}></img>
-          <img src={chainsawMan}></img>
-        </div>
+        <div className="ad-container"></div>
         <div className="main-container">
           <div className="recommend-container">
             <h1>Most Popular</h1>
@@ -94,7 +82,6 @@ function Shop() {
                     </Link>
                   );
                 })}
-              {console.log(mangas)}
             </div>
             <div className="footer">
               <button>

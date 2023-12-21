@@ -16,12 +16,73 @@
     color: white;
     background: transparent;
     letter-spacing: 1px;
+   
 }
 .header span:hover{
     color: yellow;
 }
 .blonde {
+    border-radius: 60px;
     height: 90%;
     position: relative;
     left: 0;
+   border: 1px black solid;
+}
+
+.cart {
+    display: flex;
+    position: fixed;
+    width: 25%;
+    border: 1px green solid;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+     z-index:1000;
+     flex-direction: column;
+     padding-top: 10px;
+}
+.cart img {
+    border: 5px red solid;
+    height: 190px;
+    width: 40%;
+}
+.cart button {
+    border: none;
+    width: 5%;
+    background: none;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+.cart h3 {
+    text-align: center;
+    border: 1px green solid;
+    padding: 8%;
+}
+.cart-item-container {
+    display: flex;
+    border: 1px green solid;
+    height: 22%;
+    padding: 0px 10px 0px 10px;
+}
+.cart-item {
+    border: 1px red solid;
+    width: 50%;
+}
+.cart-item-info{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px green solid;
+    width: 50%;
+    font-size: 16px;
+    padding: 15px;
+}
+.cart-item img {
+    width: 80%;
+    height: 100%;
+}
+.cart-item-details {
+    border: 1px blue solid;
+    width: 50%;
 }

@@ -32,7 +32,7 @@ function Router() {
       path: "/shop/:id",
       element: (
         <>
-          <Navbar />
+          <Navbar cart={cart} />
           <AboutManga setCart={setCart} cart={cart} />
         </>
       ),

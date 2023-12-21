@@ -1,10 +1,100 @@
 .about-container {
-    height: 89vh;
-    border: 1px orange solid;
     display: flex;
+    height: 50vh;
     justify-content: center;
-    align-items: center;
+    gap: 25px;
+    margin-top: 50px;
 }
 .about-container img {
     height: 200px;
+}
+.manga-genre-container{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
+    gap: 2px;
+}
+
+.manga-genre-container img {
+    height: 78%;
+    width: 100%;
+}
+.manga-genre-container h3 {
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.manga-genre-info {
+    display: flex;
+    flex-direction: row;
+   width: 100%;
+   flex-wrap: wrap;
+}
+.manga-genre-info span{
+    color: white;
+   font-size: 15px;
+
+   font-family: 'Courier New', Courier, monospace;
+}
+
+.manga-detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    gap: 15px;
+}
+
+.manga-detail-container span{
+    font-size: 38px;
+    letter-spacing: 1px;
+    color:  white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.manga-detail-container p{
+    color: white;
+    font-size: 20px;
+}
+.manga-detail-container .price{
+    font-weight: 600;
+    color: white;
+    font-size: 23px;
+}
+
+.quantity{
+    display: flex;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity button {
+    background: none;
+    
+    font-size: 60px;
+    color: white;
+    border: none;
+}
+.quantity span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8%;
+}
+
+.cart-button {
+    width: 15%;
+    height: 8%;
+}
+.cart-button-container{
+    display: flex;
+    justify-content: center;
+}
+.cart-button-container button{
+    font-size: 20px;
+    height: 45px;
+    width: 180px;
+    background: black;
+    color: white;
 }
