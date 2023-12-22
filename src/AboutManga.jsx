@@ -2,32 +2,38 @@ import { useEffect, useState } from "react";
 import "./aboutManga.css";
 import { Link, Outlet, useParams } from "react-router-dom";
 
-
 const AboutManga = ({ setCart, cart }) => {
-  const { id } = useParams();
-  function handleManga() {
-    setCart([...cart, manga]);
-  }
   const [manga, setManga] = useState(null);
+  const [mangaSum, setMangaSum] = useState(10.99);
+  const [mangaQuantity, setMangaQuantity] = useState(1);
+  const { id } = useParams();
+  function handleQuantity() {
+    let sum = mangaSum + 10.99;
+    let quantity = mangaQuantity + 1;
+    let mangaObj = {
+      ...manga,
+      sum: sum,
+      quantity: quantity,
+      price: 10.99,
+    };
+    setMangaSum(sum);
+    setMangaQuantity(quantity);
+    setCart([mangaObj]);
+  }
+
   useEffect(() => {
     fetch(`https://api.jikan.moe/v4/manga/${id}/full`)
       .then((response) => {
         return response.json();
       })
       .then((result) => {
-        let modifiedObj = {
-          ...result.data,
-          price: 10.99,
-        };
-        setManga(modifiedObj);
-        console.log(result);
+        setManga(result.data);
       });
   }, []);
 
   return (
     <>
       <div className="about-container">
-        {console.log(manga)}
         <div className="manga-genre-container">
           {manga && (
             <img src={manga.images.jpg.image_url} className="manga-book"></img>
@@ -43,11 +49,11 @@ const AboutManga = ({ setCart, cart }) => {
         <div className="manga-detail-container">
           <span>{manga && manga.title}</span>
           <p>{manga && manga.background}</p>
-          <p className="price">${manga && manga.price}</p>
+          <p className="price">${mangaSum}</p>
           <div className="quantity">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button onClick={console.log(cart)}>-</button>
+            <span>{mangaQuantity}</span>
+            <button onClick={handleQuantity}>+</button>
           </div>
           <div className="cart-button-container">
             <button>Add to Cart</button>

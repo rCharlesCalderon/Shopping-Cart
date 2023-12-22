@@ -27,19 +27,17 @@ function Navbar({ cart }) {
           <h3>Your Basket</h3>
           {cart.map((obj, index) => {
             return (
-              <>
-                <div className="cart-item-container" key={index}>
-                  <div className="cart-item">
-                    <img src={obj.images.jpg.image_url}></img>
-                  </div>
-                  <div className="cart-item-info">
-                    <span>{obj.title}</span>
-                    <span>quantity</span>
-                    <span>{obj.price}</span>
-                    <span>Sum</span>
-                  </div>
+              <div className="cart-item-container" key={index}>
+                <div className="cart-item">
+                  <img src={obj.images.jpg.image_url}></img>
                 </div>
-              </>
+                <div className="cart-item-info">
+                  <span>{obj.title}</span>
+                  <span>quantity</span>
+                  <span>{obj.sum}</span>
+                  <span>Sum</span>
+                </div>
+              </div>
             );
           })}
         </div>

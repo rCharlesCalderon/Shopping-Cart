@@ -33,7 +33,6 @@ function Shop() {
           return {
             ...obj,
             id: crypto.randomUUID(),
-            price: 10.99,
           };
         });
         SetrecManga(modifiedObj);
@@ -51,7 +50,6 @@ function Shop() {
           return {
             ...dataInfo,
             id: crypto.randomUUID(),
-            price: 10.99,
           };
         });
 
@@ -76,7 +74,7 @@ function Shop() {
                         <img src={obj.images.jpg.image_url}></img>
                         <div className="manga-info">
                           <span> {obj.title}</span>
-                          <span>$ {obj.price}</span>
+                          <span>$10.99</span>
                         </div>
                       </div>
                     </Link>
@@ -105,7 +103,7 @@ function Shop() {
                       <img src={obj.entry[0].images.jpg.image_url}></img>
                       <div className="manga-info">
                         <span> {obj.entry[0].title}</span>
-                        <span>$ {obj.price}</span>
+                        <span>$10.99</span>
                       </div>
                     </div>
                   </Link>
