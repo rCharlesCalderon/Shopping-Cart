@@ -16,10 +16,12 @@
     color: white;
     background: transparent;
     letter-spacing: 1px;
+
    
 }
 .header span:hover{
     color: yellow;
+    
 }
 .blonde {
     border-radius: 60px;
@@ -29,60 +31,95 @@
    border: 1px black solid;
 }
 
-.cart {
+.cart-container {
     display: flex;
     position: fixed;
-    width: 25%;
+    width: 20%;
     border: 1px green solid;
     height: 100vh;
     right: 0;
     bottom: 0;
      z-index:1000;
      flex-direction: column;
-     padding-top: 10px;
+     gap: 10px;
+     overflow: scroll;
+   
 }
-.cart img {
-    border: 5px red solid;
-    height: 190px;
-    width: 40%;
-}
-.cart button {
-    border: none;
-    width: 5%;
+.cart-container button {
     background: none;
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
+    text-align: left;
+    border: none;
+    width: min-content;
+    
 }
-.cart h3 {
-    text-align: center;
-    border: 1px green solid;
-    padding: 8%;
+.cart-container h3 {
+   text-align: center;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
-.cart-item-container {
-    display: flex;
-    border: 1px green solid;
-    height: 22%;
-    padding: 0px 10px 0px 10px;
+.exitImg {
+    height: 30px;
 }
-.cart-item {
-    border: 1px red solid;
-    width: 50%;
-}
-.cart-item-info{
+.items-container{
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    border: 1px green solid;
-    width: 50%;
-    font-size: 16px;
-    padding: 15px;
+   gap: 5px;
+    height: 200px;
+    margin-top: 10px;
+   align-items: center;
 }
-.cart-item img {
-    width: 80%;
+
+.item {
+    display: flex;
+    height: 100%;
+    gap: 8px;
+    justify-content: center;
+}
+.item-img img {
     height: 100%;
 }
-.cart-item-details {
-    border: 1px blue solid;
+
+.item-info{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
     width: 50%;
+    height: 100%;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.trash {
+    display: flex;
+   
+    height:100%;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.trash img {
+    height: 30px;
+}
+.trash img:hover{
+    color: red;
+}
+hr{
+    width: 95%;
+    color: green;
+}
+.checkout-container {
+
+    display: flex;
+    height: 100px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.empty-cart {
+    width: 100%;
+    text-align: center;
+}
+
+.full-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }

@@ -1,11 +1,21 @@
 import { Link } from "react-router-dom";
-
-function Home() {
+import yukiImg from "./images/yuki.png";
+import "./home.css";
+import Navbar from "./Navbar";
+function Home({ cart, setCart }) {
   return (
-    <>
-      <p>IM THE HOMEPAGE </p>
-      <Link to="shop">SHOP</Link>
-    </>
+    <div className="home">
+      <Navbar cart={cart} setCart={setCart} />
+      <div className="explore-container">
+        <h2 className="home-opening">Your Shop for Manga</h2>
+        <span className="home-text">
+          Discover Manga ranging from old classics to the newest, trending ones!
+        </span>
+        <Link to="shop">
+          <button className="explore-btn"> Explore Now</button>
+        </Link>
+      </div>
+    </div>
   );
 }
 

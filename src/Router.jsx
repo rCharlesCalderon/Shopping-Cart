@@ -14,8 +14,7 @@ function Router() {
       path: "/",
       element: (
         <>
-          <Navbar cart={cart} />,
-          <Home />,
+          <Home cart={cart} setCart={setCart} />
         </>
       ),
     },
@@ -23,7 +22,7 @@ function Router() {
       path: "/shop",
       element: (
         <>
-          <Navbar cart={cart} />
+          <Navbar cart={cart} setCart={setCart} />
           <Shop />
         </>
       ),
@@ -32,7 +31,7 @@ function Router() {
       path: "/shop/:id",
       element: (
         <>
-          <Navbar cart={cart} />
+          <Navbar cart={cart} setCart={setCart} />
           <AboutManga setCart={setCart} cart={cart} />
         </>
       ),

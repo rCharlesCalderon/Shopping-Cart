@@ -1,24 +1,57 @@
 import { useEffect, useState } from "react";
 import "./aboutManga.css";
 import { Link, Outlet, useParams } from "react-router-dom";
+import cartImg from "./images/cart.png";
 
 const AboutManga = ({ setCart, cart }) => {
   const [manga, setManga] = useState(null);
   const [mangaSum, setMangaSum] = useState(10.99);
   const [mangaQuantity, setMangaQuantity] = useState(1);
   const { id } = useParams();
-  function handleQuantity() {
-    let sum = mangaSum + 10.99;
-    let quantity = mangaQuantity + 1;
+  console.log(cart);
+  function addShopCart() {
     let mangaObj = {
       ...manga,
-      sum: sum,
-      quantity: quantity,
+      sum: mangaSum,
+      quantity: mangaQuantity,
       price: 10.99,
     };
-    setMangaSum(sum);
+    let findManga = cart.findIndex((obj) => mangaObj.mal_id === obj.mal_id);
+    if (findManga !== -1) {
+      let updatedObj = [...cart];
+      let prevObj = [...cart][findManga];
+      let addSums = mangaSum + prevObj.sum;
+      let totalSum = parseFloat(addSums.toFixed(2));
+      updatedObj[findManga] = {
+        ...mangaObj,
+        sum: totalSum,
+        quantity: mangaQuantity + prevObj.quantity,
+      };
+      setCart(updatedObj);
+      console.log(cart);
+    } else {
+      setCart([...cart, mangaObj]);
+    }
+  }
+
+  function subtractCart() {
+    let subSum = mangaSum - 10.99;
+    let quantity = mangaQuantity - 1;
+    if (mangaQuantity > 0) {
+      let sum = parseFloat(subSum.toFixed(2));
+      setMangaSum(sum);
+      setMangaQuantity(quantity);
+    }
+  }
+  function handleAdd() {
+    let quantity = mangaQuantity + 1;
+
+    setMangaSum((previousSum) => {
+      let sum = previousSum + 10.99;
+
+      return parseFloat(sum.toFixed(2));
+    });
     setMangaQuantity(quantity);
-    setCart([mangaObj]);
   }
 
   useEffect(() => {
@@ -51,12 +84,12 @@ const AboutManga = ({ setCart, cart }) => {
           <p>{manga && manga.background}</p>
           <p className="price">${mangaSum}</p>
           <div className="quantity">
-            <button onClick={console.log(cart)}>-</button>
+            <button onClick={subtractCart}>-</button>
             <span>{mangaQuantity}</span>
-            <button onClick={handleQuantity}>+</button>
+            <button onClick={handleAdd}>+</button>
           </div>
           <div className="cart-button-container">
-            <button>Add to Cart</button>
+            <button onClick={addShopCart}>Add to Cart</button>
           </div>
         </div>
       </div>

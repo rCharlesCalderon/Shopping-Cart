@@ -77,6 +77,7 @@ h1{
    
 }
 
+
 .manga-book img {
     height: 100%;
    width: 100%;
@@ -102,9 +103,13 @@ h1{
     text-overflow: ellipsis;
     line-height: var(--font-size-m);
   }
+  
   .manga-book:hover .manga-info span {
-   color: yellow;
-    transform: translateY(-60%);
+    transform: translateY(-30%);
+    transition: 0.4s;
+}
+ .manga-book:hover .manga-info span:nth-child(1){
+    color: yellow;
 }
 
 

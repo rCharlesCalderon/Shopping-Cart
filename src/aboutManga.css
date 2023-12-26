@@ -4,7 +4,9 @@
     justify-content: center;
     gap: 25px;
     margin-top: 50px;
+    
 }
+
 .about-container img {
     height: 200px;
 }
@@ -34,7 +36,7 @@
 }
 .manga-genre-info span{
     color: white;
-   font-size: 16px;
+   font-size: 17px;
 
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -47,14 +49,15 @@
 }
 
 .manga-detail-container span{
-    font-size: 38px;
+    font-size: 40px;
     letter-spacing: 1px;
     color:  white;
-    font-family: Arial, Helvetica, sans-serif;
+
 }
 .manga-detail-container p{
     color: white;
     font-size: 20px;
+    
 }
 .manga-detail-container .price{
     font-weight: 600;
@@ -71,30 +74,41 @@
 
 .quantity button {
     background: none;
-    
+    border: none;
     font-size: 60px;
     color: white;
-    border: none;
 }
+
 .quantity span {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 8%;
+    width: 7%;
 }
 
-.cart-button {
-    width: 15%;
-    height: 8%;
-}
+
 .cart-button-container{
     display: flex;
     justify-content: center;
 }
 .cart-button-container button{
-    font-size: 20px;
-    height: 45px;
-    width: 180px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 800;
+    height: 40px;
+    width: 220px;
+    background: #fab818;
+    border-color: #fab818;
+    color: #141519;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+   
+}
+
+.cart-button-container button:hover{
     background: black;
     color: white;
+    border: grey;
+    
 }

@@ -1,0 +1,52 @@
+
+.home {
+    display: flex;
+    background-image: url("./images/yuki.png");
+    height: 100vh;
+   align-items: center;
+   flex-direction: column;
+   gap: 140px;
+   opacity: 1.2;
+}
+
+.explore-container {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 100%;
+   align-items: center;
+   justify-content: center;
+   gap: 18px;
+   color: black;
+}
+
+.home-opening {
+    font-size: 60px;
+    
+}
+.home-text {
+    font-size: 50px;
+    font-weight: 550;
+}
+
+.explore-btn {
+    width: 210px;
+    height: 40px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    background-color: black;
+    
+}
+ .explore-btn{
+    text-align: center;
+ box-shadow: 0 4px 14px 0 rgb(255, 255, 255);
+ color: white;
+font-size: 18px;
+transition: transform 0.3s ease;
+ }
+.explore-btn:hover {
+   transform: translateY(-2px);
+   transition: transform 0.3s ease;
+}
