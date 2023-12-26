@@ -6,3 +6,4 @@ export default defineConfig({
   base: "/Shopping-Cart",
   plugins: [react()],
 });
+
