@@ -5,7 +5,6 @@ import blonde from "./images/blonde-avatar.png";
 import exitImg from "./images/x.png";
 import trashImg from "./images/trash.png";
 import { useState } from "react";
-import { func } from "prop-types";
 
 function Navbar({ cart, setCart }) {
   const [checkout, setCheckout] = useState(false);
