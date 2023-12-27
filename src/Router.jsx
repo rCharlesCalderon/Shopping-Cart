@@ -1,43 +1,46 @@
 import React from "react";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Home.jsx";
 import Shop from "./Shop.jsx";
 import Navbar from "./Navbar.jsx";
 import AboutManga from "./AboutManga.jsx";
 import { useState } from "react";
 
-function Router() {
+function AppRouter() {
   const [cart, setCart] = useState([]);
-  const router = createHashRouter([
-    {
-      path: "/",
-      element: (
-        <>
-          <Home cart={cart} setCart={setCart} />
-        </>
-      ),
-    },
-    {
-      path: "/shop",
-      element: (
-        <>
-          <Navbar cart={cart} setCart={setCart} />
-          <Shop />
-        </>
-      ),
-    },
-    {
-      path: "/shop/:id",
-      element: (
-        <>
-          <Navbar cart={cart} setCart={setCart} />
-          <AboutManga setCart={setCart} cart={cart} />
-        </>
-      ),
-    },
-  ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Home cart={cart} setCart={setCart} />
+            </>
+          }
+        />
+        <Route
+          path="/shop"
+          element={
+            <>
+              <Navbar cart={cart} setCart={setCart} />
+              <Shop />
+            </>
+          }
+        />
+        <Route
+          path="/shop/:id"
+          element={
+            <>
+              <Navbar cart={cart} setCart={setCart} />
+              <AboutManga setCart={setCart} cart={cart} />
+            </>
+          }
+        />
+      </Routes>
+    </Router>
+  );
 }
 
-export default Router;
+export default AppRouter;
