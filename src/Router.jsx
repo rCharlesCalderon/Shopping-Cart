@@ -1,6 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import Home from "./Home.jsx";
 import Shop from "./Shop.jsx";
 import Navbar from "./Navbar.jsx";
@@ -9,9 +8,9 @@ import { useState } from "react";
 
 function Router() {
   const [cart, setCart] = useState([]);
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
-      path: "/Home",
+      path: "/",
       element: (
         <>
           <Home cart={cart} setCart={setCart} />
@@ -42,5 +41,3 @@ function Router() {
 }
 
 export default Router;
-
-

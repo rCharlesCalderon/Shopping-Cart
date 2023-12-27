@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://rCharlesCalderon.github.io/Home",
+  "homepage": "https://rCharlesCalderon.github.io/Shopping-Cart",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",

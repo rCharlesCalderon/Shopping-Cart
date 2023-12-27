@@ -32,6 +32,7 @@ function Shop() {
   }
   function handleNextClick() {
     setPage((previousPage) => {
+      window.scrollTo(0, 0);
       const nextPage = previousPage + 1;
       handlePopularManga(nextPage);
       return nextPage;
@@ -40,6 +41,7 @@ function Shop() {
   function handlePreviousClick() {
     if (page > 1) {
       setPage((previousPage) => {
+        window.scrollTo(0, 0);
         const nextPage = previousPage - 1;
         handlePopularManga(nextPage);
         return nextPage;
