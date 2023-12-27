@@ -10,7 +10,7 @@ function Home({ cart, setCart }) {
         <span className="home-text">
           Discover Manga ranging from old classics to the newest, trending ones!
         </span>
-        <Link to="shop">
+        <Link to="/shop">
           <button className="explore-btn"> Explore Now</button>
         </Link>
       </div>

@@ -20,7 +20,7 @@ function Navbar({ cart, setCart }) {
   return (
     <div className="header">
       <img src={blonde} className="blonde"></img>
-      <Link to="/">
+      <Link to="/Home">
         <span>Home</span>
       </Link>
       <Link to="/shop">

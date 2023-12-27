@@ -11,7 +11,7 @@ function Router() {
   const [cart, setCart] = useState([]);
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/Home",
       element: (
         <>
           <Home cart={cart} setCart={setCart} />
