@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import yukiImg from "./images/yuki.png";
 import "./home.css";
 import Navbar from "./Navbar";
 function Home({ cart, setCart }) {

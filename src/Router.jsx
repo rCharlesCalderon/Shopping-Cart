@@ -43,7 +43,4 @@ function Router() {
 
 export default Router;
 
-//{ path:"shop/:name", element:<Shop/>} render content dynamically from the component itself
-//OR
 
-//{path: "shop",element: ( <> <Shop /> <Manga /> </>),},
