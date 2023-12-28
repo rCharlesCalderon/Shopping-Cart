@@ -16,3 +16,27 @@ a{
     color: white;
      text-decoration: none;
 }
+
+@media (max-width:600px){
+   
+   .header a{
+    font-size: 14px;
+    font-weight: 800;
+    color: white;
+   }
+   .header img {
+    height: 80%;
+   }
+   
+   .home {
+    gap: 20px;
+   }
+    .home-opening {
+        font-size: 35px;
+        
+    }
+.home-text {
+    font-size: 25px;
+    font-weight: 900;
+}
+}

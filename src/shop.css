@@ -157,3 +157,25 @@ h1{
   
 }
 
+@media (max-width:1630px){
+    
+.hottest-container {
+    justify-content: space-evenly;
+}
+}
+
+@media (max-width:1550px){
+    .recommend-container {
+        width: 100%;
+    }
+    .recommend-container h1 {
+        text-align: center;
+    }
+    .manga-container{
+        justify-content: space-evenly;
+    }
+.hottest-container {
+   display: none;
+}
+}
+

@@ -113,3 +113,34 @@
     border: grey;
     
 }
+
+@media (max-width:690px) {
+    .manga-genre-container {
+        height: 70%;
+        width: 30%;
+    }
+.manga-genre-info span {
+   font-size: 12px;
+}
+    .manga-detail-container {
+        height: 30%;
+    }
+    .manga-detail-container span{
+        font-size:20px;
+    }
+    .manga-detail-container p {
+        font-size: 12px;
+        font-weight: 900;
+    }
+    .quantity {
+        gap: 10px;
+    }
+    .quantity button {
+        font-size: 35px;
+        height: 40px;
+    }
+
+    .quantity span {
+        font-size: 30px;
+    }
+}

@@ -139,3 +139,23 @@ hr{
     gap: 3px;
     margin-left: 4px;
 }
+
+@media(max-width:1300px){
+    .cart-container {
+        width: 55%;
+    }
+    .items-container{
+
+    }
+}
+
+@media (max-width:580px) {
+   
+    .item-img{
+        height: 80%;
+        
+    }
+    .item-info span{
+        font-size: 13px;
+    }
+}
