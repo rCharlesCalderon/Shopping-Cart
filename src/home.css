@@ -1,12 +1,15 @@
 
 .home {
     display: flex;
-    background-image: url("./images/yuki.png");
+    background-image: url("./images/wallpapersden.com_red-denji-art-chainsaw-man_1920x1080.jpg");
     height: 100vh;
    align-items: center;
    flex-direction: column;
    gap: 140px;
    opacity: 1.2;
+   background-repeat: no-repeat;
+   
+  
 }
 
 .explore-container {
@@ -17,7 +20,7 @@
    align-items: center;
    justify-content: center;
    gap: 18px;
-   color: black;
+   color: whitesmoke;
    text-align: center;
 }
 
